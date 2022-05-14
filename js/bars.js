@@ -1,27 +1,59 @@
 let voterBars = document.querySelectorAll('.voter-bar');
 let summaryBars = document.querySelectorAll('.summary-bar');
 
+let votes = [];
+
+const client = new tmi.Client({
+	options: {debug: false, messagesLogLevel: "info"},
+	connection: {
+		secure: true,
+		reconnect: true
+	},
+	channels: ['username']
+});
+
 function lerp(start, end, amt) {
-	return (1-amt)*start+amt*end
+	return (1 - amt) * start + amt * end
 }
 
-(function() {
-	setInterval(function() {
-		let barVotes = [1, 1, 1, 1, 1, 1];
+function voteToIndex(message) {
+	let i = message.toLowerCase().charCodeAt(0) - 97;
+	return i < 0 || i > 5 ? -1 : i;
+}
+
+client.connect().catch(console.error);
+client.on('message', (channel, tags, message, self) => {
+	if (self) return;
+	let i = voteToIndex(message);
+	if (i === -1) return;
+	votes[tags.username] = i;
+});
+
+function filterVotes(i) {
+	let result = 0;
+	Object.keys(votes).forEach(username => {
+		if (votes[username] === i) result++;
+	});
+	return result;
+}
+
+(function () {
+	setInterval(function () {
 		/*for(let i = 0; i < barVotes.length; i++) {
 			barVotes[i] = Math.random() * 100000;
 		} // for testing*/
-		let sum = barVotes.reduce((a, b) => a + b, 0);
+		let sum = Object.keys(votes).length;
 		let i = 0;
-		voterBars.forEach(function(bar) {
-			bar.style.setProperty('--data-width-to',  (sum === 0 ? 0 : barVotes[i] / sum * 100.0) + '%');
+		voterBars.forEach(function (bar) {
+			let partAmount = sum === 0 ? 0 : filterVotes(i) / sum * 100.0;
+			bar.style.setProperty('--data-width-to', partAmount + '%');
 			i++;
 		});
 	}, 1000);
 
-	setInterval(function() {
+	setInterval(function () {
 		let i = 0;
-		voterBars.forEach(function(bar) {
+		voterBars.forEach(function (bar) {
 			let actual = bar.style.getPropertyValue('--data-width').replace('%', '');
 			let to = bar.style.getPropertyValue('--data-width-to').replace('%', '');
 			let result = lerp(actual, to, 0.1);

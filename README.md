@@ -2,7 +2,7 @@ Twitch Votes
 =
 A stylish voting tool for streamers and viewers.
 
-![Version](https://img.shields.io/badge/Version-0.3.1-yellow)
+![Version](https://img.shields.io/badge/Version-0.4.0-yellow)
 
 Previews
 -
