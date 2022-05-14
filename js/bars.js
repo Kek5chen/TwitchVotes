@@ -8,10 +8,7 @@ function lerp (start, end, amt){
 (function() {
 	// set random tos
 	setInterval(function() {
-		let barVotes = [];
-		for (let i = 0; i < voterBars.length; i++) {
-			barVotes.push(Math.random() * 1000);
-		}
+		let barVotes = [0, 0, 0, 0, 0, 0];
 		let sum = barVotes.reduce((a, b) => a + b, 0);
 		let i = 0;
 		voterBars.forEach(function(bar) {
