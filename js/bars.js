@@ -1,3 +1,9 @@
+/*==================================================== CONFIG ========================================================*/
+
+let 								   	TWITCH_USERNAME = 'your_twitch_username';
+
+/*===================================================================================================================*/
+
 let voterBars = document.querySelectorAll('.voter-bar');
 let summaryBars = document.querySelectorAll('.summary-bar');
 
@@ -9,7 +15,7 @@ const client = new tmi.Client({
 		secure: true,
 		reconnect: true
 	},
-	channels: ['username']
+	channels: [TWITCH_USERNAME]
 });
 
 function lerp(start, end, amt) {

@@ -2,7 +2,7 @@ Twitch Votes
 =
 A stylish voting tool for streamers and viewers.
 
-![Version](https://img.shields.io/badge/Version-0.4.0-yellow)
+![Version](https://img.shields.io/badge/Version-1.0.0-green)
 
 Previews
 -
@@ -32,4 +32,5 @@ Installation
 
 Config Setup
 -
-There is no config at this point in development as we are still in a prototyping stage.
+1. Enter the folder `js` and open the file `bars.js` inside the cloned repository folder.
+2. Edit your twitch username into line 3 where it says `your_twitch_username`
