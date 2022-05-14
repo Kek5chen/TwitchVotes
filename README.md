@@ -6,9 +6,9 @@ A stylish voting tool for streamers and viewers.
 
 Previews
 -
-![Votes_Preview](https://raw.githubusercontent.com/Kek5chen/TwitchVotes/preview/videos/votes.mp4)
+![Votes_Preview](https://media4.giphy.com/media/DDUZHtn0EErwu5AmCt/giphy.gif?cid=790b7611f7d7c376d3257f2bfd72f4de51b0d24d0067f934&rid=giphy.gif&ct=g)
 
-![Votes_Preview_Small](https://raw.githubusercontent.com/Kek5chen/TwitchVotes/preview/videos/votes_small.mp4)
+![Votes_Preview_Small](https://media0.giphy.com/media/GFZHgrF9QkAsJLL1rB/giphy.gif?cid=790b7611666dd5fcc571eb3f853fee0ad926b4f135e8cde8&rid=giphy.gif&ct=g)
 
 Installation
 -
