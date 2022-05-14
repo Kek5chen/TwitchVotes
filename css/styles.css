@@ -5,6 +5,7 @@
 
 body {
     background-color: var(--color-background);
+    padding: 0 10% 10%;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
@@ -46,6 +47,8 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .voter-bar:after {
+    position: absolute;
+    padding-top: 10px;
     content: attr(data-content);
     display: inline-block;
     color: white;
@@ -107,10 +110,12 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .summary-bar {
+    --data-width: 16.485%;
     height: 7px;
-    width: 16.485%;
+    width: calc(var(--data-width) - 3px);
     margin-bottom: 1rem;
-    display: inline-block;
+    margin-left: 2px;
+    float: left;
     padding: 0;
 }
 
