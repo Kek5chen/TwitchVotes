@@ -27,14 +27,6 @@ function voteToIndex(message) {
 	return i < 0 || i > 5 ? -1 : i;
 }
 
-client.connect().catch(console.error);
-client.on('message', (channel, tags, message, self) => {
-	if (self) return;
-	let i = voteToIndex(message);
-	if (i === -1) return;
-	votes[tags.username] = i;
-});
-
 function filterVotes(i) {
 	let result = 0;
 	Object.keys(votes).forEach(username => {
@@ -44,6 +36,14 @@ function filterVotes(i) {
 }
 
 (function () {
+	client.connect().catch(console.error);
+	client.on('message', (channel, tags, message, self) => {
+		if (self) return;
+		let i = voteToIndex(message);
+		if (i === -1) return;
+		votes[tags.username] = i;
+	});
+
 	setInterval(function () {
 		/*for(let i = 0; i < barVotes.length; i++) {
 			barVotes[i] = Math.random() * 100000;
