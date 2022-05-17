@@ -1,6 +1,12 @@
 :root {
     --color-background: #242424;
     --color-background-light: #636363;
+    --color-red: #ff5959;
+    --color-orange: #ff9f59;
+    --color-yellow: #ffd459;
+    --color-green: #59ff59;
+    --color-lightblue: #59bfff;
+    --color-blue: #5959ff;
 }
 
 body {
@@ -58,51 +64,51 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .before-color-red:before {
-    background-color: #ff5959;
+    background-color: var(--color-red);
 }
 
 .before-color-orange:before {
-    background-color: #ff9f59;
+    background-color: var(--color-orange);
 }
 
 .before-color-yellow:before {
-    background-color: #ffd459;
+    background-color: var(--color-yellow);
 }
 
 .before-color-green:before {
-    background-color: #59ff59;
+    background-color: var(--color-green);
 }
 
 .before-color-lightblue:before {
-    background-color: #59bfff;
+    background-color: var(--color-lightblue);
 }
 
 .before-color-blue:before {
-    background: #5959ff;
+    background: var(--color-blue);
 }
 
 .color-red {
-    background-color: #ff5959;
+    background-color: var(--color-red);
 }
 
 .color-orange {
-    background-color: #ff9f59;
+    background-color: var(--color-orange);
 }
 
 .color-yellow {
-    background-color: #ffd459;
+    background-color: var(--color-yellow);
 }
 
 .color-green {
-    background-color: #59ff59;
+    background-color: var(--color-green);
 }
 
 .color-lightblue {
-    background-color: #59bfff;
+    background-color: var(--color-lightblue);
 }
 
 .color-blue {
-    background: #5959ff;
+    background: var(--color-blue);
 }
 
 .summary-bar-start {
