@@ -28,9 +28,9 @@ Installation
     5. Check `Local File`
     6. Browse to the file `index.html` in the cloned repository folder
     7. Press `Close`
-3. View [Config Setup](#Config Setup) to get your twitch channel set up
+3. View [Config Setup](#config) to get your twitch channel set up
 
-Config Setup
+Config Setup <a id='config'></a>
 -
 1. Enter the folder `js` and open the file `bars.js` inside the cloned repository folder.
 2. Edit your twitch username into line 3 where it says `your_twitch_username`
