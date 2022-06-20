@@ -45,9 +45,6 @@ function filterVotes(i) {
 	});
 
 	setInterval(function () {
-		/*for(let i = 0; i < barVotes.length; i++) {
-			barVotes[i] = Math.random() * 100000;
-		} // for testing*/
 		let sum = Object.keys(votes).length;
 		let i = 0;
 		voterBars.forEach(function (bar) {
